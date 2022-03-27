@@ -1,0 +1,33 @@
+def collatz():
+    global number
+    number = input("Pick a number ")
+
+def askAgain():
+    collatz()
+    try:
+        val = int(number)
+        if (int(number) % 2) == 0:
+            print(number, 'divided by 2 is', int(number) // 2)
+            askAgain()
+        else:
+            print(number,'x 3 + 1 =',(int(number)) * 3 + 1)
+            askAgain()
+    except ValueError:
+        print('umm... "'+number+'"', "is not a number...")
+        askAgain()
+        
+askAgain()
+
+
+
+
+ 
+
+    
+
+
+
+   
+       
+    
+
