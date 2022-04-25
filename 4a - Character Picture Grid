@@ -1,0 +1,81 @@
+grid = [['.', '.', '.', '.', '.', '.'],
+        ['.', 'O', 'O', '.', '.', '.'],
+        ['O', 'O', 'O', 'O', '.', '.'],
+        ['O', 'O', 'O', 'O', 'O', '.'],
+        ['.', 'O', 'O', 'O', 'O', 'O'],
+        ['O', 'O', 'O', 'O', 'O', '.'],
+        ['O', 'O', 'O', 'O', '.', '.'],
+        ['.', 'O', 'O', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.']]
+
+# VERSION 1
+for row in range(len(grid)):
+        print(grid[row][0])
+# managed to print the first of each row, but appearing on separate lines.
+# realised I need it to loop to print the next in each row
+# '0' is only ever going to give me the first one 'column'.
+
+# VERSION 1.5
+for row in range(len(grid)):
+        print(grid[row][0],end=' ')
+# small modification to make it print on the same line, from chapter 3!
+
+# VERSION 2
+for row in range(len(grid)):
+    for column in grid:
+        print(grid[row][column], end=' ')
+# Receive Error:
+    #print(grid[row][column], end=' ')
+    #TypeError: list indices must be integers or slices, not list
+# I'm guessing 'column' is not being treated like an integer.....
+# is it referring to the 'grid' in print(grid......?????
+
+            
+# VERSION 3
+# took the grid away and removed the print and removed the brackets from row
+# assume it can't look at it if it's inside brackets
+for row in range(len(grid[0])):
+    for column in grid:
+        print(row[column],end=' ')
+# Error:
+    #print(row[column],end=' ')
+    #TypeError: 'int' object is not subscriptable
+# A different error at least!
+# Progress???
+
+
+# VERSION 4
+# swapped column in row in lines 1 & 2
+# because I think 'not subscriptable' is referring to the column.
+# I think can't perform actions based on the column such as print because it's inside the row and we've stepped down into the column??
+    # I don't know if that actually makes sense.....
+# so I'm trying performing actions on the row, which reference the column inside it instead.
+    # The thing we *want* is the column value from inside the row, so it half makes sense you might need to give it a for-loop first??
+for column in range(len(grid[0])):
+    for row in grid:
+        print(row[column],end=' ')
+# RESULT!!!: It appears to have printed the first column of each row, then the second column of each row
+# h o w e v e r:        They're all on one line.......*sigh*
+
+# VERSION 6
+# I googled printing a for-loop within a for-loop on a new line.
+# there was an example where something was printed inside a for-loop and then outside of the for-loop was a print()
+# the example's result was the result of each loop printed as a new line....
+for column in range(len(grid[0])):
+    for row in grid:
+        print(row[column],end=' ')
+    print()
+# RESULT: It works!  I'll never get back that 2.5 hours of my life....
+# Actually, it doesn't....I only just realised it's putting spaces between the printed characters on each row
+
+# VERSION 7
+# Okay I had put a space between the "'"s like end=' ' instead of end=''
+# I think the other way looks prettier.....
+for column in range(len(grid[0])):
+    for row in grid:
+        print(row[column],end='')
+    print()
+# 2.55 hours of my life i'll never get back.
+
+
+
