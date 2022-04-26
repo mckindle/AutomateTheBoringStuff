@@ -65,3 +65,9 @@ Q:10. Why does this expression cause an error? How can you fix it?
 'I have eaten ' + 99 + ' burritos.'
 
 99 is a value and cannot be added to strings.  Either add quotations, or use a function to deliver it as a strong value.
+
+
+EXTRA CREDIT:
+Len() counts the length of a value or value stored in a variable
+Round() will round a number up or down, or can additionally round to a set number of decimal places
+e.g. Round(6.78909, 2) would round to 6.79
