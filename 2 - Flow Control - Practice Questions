@@ -65,3 +65,57 @@ Block3:           print('ham')
           
 Q:9. Write code that prints Hello if 1 is stored in spam, prints Howdy if 2 is stored in spam, and prints Greetings! if anything else is stored in spam.
 
+import random 
+spam = random.randint(1,4)
+if spam == 1:
+    print('Hello')
+elif spam == 2:
+    print('Howdy')
+else:
+    print('Greetings')
+print(spam)
+
+
+Q:10. What can you press if your program is stuck in an infinite loop?
+
+CTRL+C
+
+
+Q:11. What is the difference between break and continue?
+
+- A break is a statement that will break free from an infinite loop if the condition of the loop is met.
+- A continue statement always jumps back to the start of the loop enabling it to re-evaluated the condition of the loop,
+progressing past it only when the condition is met, usually to another 'if' statement.
+
+
+Q:12 What is the difference between range(10), range(0, 10), and range(0, 10, 1) in a for loop?
+
+range(10) has a range of 10 items
+range(0,10) has a range 0f 9 items starting from 0 and going up to 9, so not including 10.
+range(0,10,1) has a range of 9 items from 0 to 9, again not including 10, and in increments of 1.
+
+
+Q:13. Write a short program that prints the numbers 1 to 10 using a for loop. Then write an equivalent program that prints the numbers 1 to 10 using a while loop.
+
+#1
+for i in range(1,11):
+    print(i)
+    
+#2
+range = 0
+while range != 10:
+        range += 1
+        print(range)
+        
+        
+Q:14. If you had a function named bacon() inside a module named spam, how would you call it after importing spam?
+
+spam.bacon()
+
+
+EXTRA CREDIT:
+# Round()
+Round() will round a number up or down, or can additionally round to a set number of decimal places
+e.g. Round(6.78909, 2) would round to 6.79
+
+# abs()
