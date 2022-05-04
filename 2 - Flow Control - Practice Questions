@@ -119,3 +119,4 @@ Round() will round a number up or down, or can additionally round to a set numbe
 e.g. Round(6.78909, 2) would round to 6.79
 
 # abs()
+produced a definite number in a positive value
