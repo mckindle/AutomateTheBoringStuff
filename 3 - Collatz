@@ -38,7 +38,7 @@ def collatz(number):
         return abs(3 * number + 1)
 
 # however I did want to retain some of the askAgain() principals:
-# so I included some validation to check the answer was an integer.
+# so I included some validation to check the answer was an integer.  I didn't know what the error was until it failed and then I used the error type to create the 'except'.
 # and said that while the answer isn't 1 it will continue to perform collatz, inserting the answer as the number as defined in the collatz() function.
 # when the answer becomes 1 the code will move on, and as part of the if statement the question will get asked again. 
 # I don't need to include an else because any alternatives were already included as part of the while loop.
