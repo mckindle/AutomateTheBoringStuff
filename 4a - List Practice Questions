@@ -1,0 +1,13 @@
+Q1. What is []?
+Square brackets encase a list with each item in the list separated by commas.
+
+
+Q2. How would you assign the value 'hello' as the third value in a list stored in a variable named spam? (Assume spam contains [2, 4, 6, 8, 10].)
+spam[2] = 'hello' because the first value starts at index 0?
+
+
+For the following three questions, let’s say spam contains the list ['a', 'b', 'c', 'd'].
+
+Q3. What does spam[int(int('3' * 2) // 11)] evaluate to?
+
+Q4. What does spam[-1] evaluate to?
