@@ -1,0 +1,50 @@
+## VERSION 1 ##
+# It took me a good long while to get the last item in the list to be treated differently to include the 'and'.  
+# I was trying to use a slice, but it just wasn't working how I wanted it to.
+# So instead I said if the current i index is less than the length of the list minus one then add the value of that index as a strong to my spam_string list with an comma after.
+# else if the index is the same as the length of the list minus one, but with an 'and' before it.
+# this is very much leveraging the fact that the index starts a 0 and the length of the list minus 1 will at some point match the index, with only the last index being treated differently.
+# This currently creates an oxford comma situation.
+
+spam = ['apples', 'bananas', 'tofu', 'cats']
+spam_string = ' '
+
+for i in range(len(spam)):
+    if i < len(spam)-1:
+        spam_string += str(spam[i])+', '
+    else:
+        spam_string += str('and ' + spam[i])
+        
+print(spam_string)
+
+
+
+## VERSION 2 ##
+# For version 2 I realised I could build into the if statement that I wanted the range to be the length of the list -1.
+# Since it was only ever going to be the very last item in the list that would be treated differently I could do this outside of the for-loop.
+# Version 1 was perhaps easier to read, but in version two I was able to remove both the if and the else statement.
+
+spam = ['apples', 'bananas', 'tofu', 'cats']
+spam_string = ' '
+
+for i in range(len(spam)-1):
+    spam_string += str(spam[i])+', '
+spam_string += str('and ' + spam[-1])
+
+print(spam_string)
+
+
+## VERSION 3 ##
+# Here I was really just turning what I did so far into the function, which was the point of the exercise.
+# I called the function list_to_string to remind myself I always want the contents to be a string, as the contents of lists passed can be anything.
+Once a string is defined you can use the function to pass the string (any string) and it should work regardless of the data type.
+
+def list_to_string(the_list):
+    the_string = ' '
+    for i in range(len(the_list)-1):
+                   the_string += str(the_list[i])+', '
+    the_string += str('and ' + the_list[-1])
+    print(the_string)
+
+spam = ['apples', 'bananas', 'tofu', 'cats']
+list_to_string(spam)
