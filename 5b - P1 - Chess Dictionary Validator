@@ -1,0 +1,33 @@
+import pprint
+chessBoard = {'1a':'wRook', '1b':'wKnight', '1c':'wBishop','1d':'wQueen', '1e':'wKing','1f':'wBishop','1g':'wKnight','1h':'wRook',
+              '2a':'wPawn', '2b':'wPawn', '2c':'wPawn','2d':'wPawn', '2e':'wPawn','2f':'wPawn','2g':'wPawn','2h':'wPawn',
+              '7a':'bPawn', '7b':'bPawn', '7c':'bPawn','7d':'bPawn', '7e':'bPawn','7f':'bPawn','7g':'bPawn','7h':'bPawn',
+              '8a':'bRook', '8b':'bKnight', '8c':'bBishop','8d':'bQueen', '8e':'bKing','8f':'bBishop','8g':'bKnight','8h':'bPawn'}
+
+correctNoParts = {'bBishop': 2,
+ 'bKing': 1,
+ 'bKnight': 2,
+ 'bPawn': 8,
+ 'bQueen': 1,
+ 'bRook': 2,
+ 'wBishop': 2,
+ 'wKing': 1,
+ 'wKnight': 2,
+ 'wPawn': 8,
+ 'wQueen': 1,
+ 'wRook': 2}
+
+
+def validateChessboard(chessDict):
+    countPieces = {}
+
+    for x in chessDict.values():
+        countPieces.setdefault(x,0)
+        countPieces[x] = countPieces[x] + 1
+
+    for i in countPieces:
+        if countPieces[i] != correctNoParts[i]:
+            print('You have the wrong amount of ' +str(i)+ ' parts.')
+      
+validateChessboard(chessBoard)
+
