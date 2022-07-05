@@ -1,0 +1,24 @@
+Q1: dictionary = {}
+
+Q2: dictionary = {'foo': '42'} 
+
+Q3: 
+  - dictionaries cannot be sorted, a list can be sorted by it's values.
+  - dictionaries contain pairs of keys and values, which together are called items.  A list only containes values.
+
+Q4: KeyError: 'foo'
+
+Q5: There is no difference between 'cat' in spam OR 'cat' in spam.keys() as they both search for the keys within the items.
+
+Q6: 'cat' in spam: searches the keys within the items of spam
+     whereas 'cat' in spam.values() will search specifically for the values within the items of spam.
+
+Q7: spam.setdefault('colour', 'black')
+      is an easier way to write:
+
+if 'color' not in spam:
+    spam['color'] = 'black'
+
+Q8:
+import pprint 
+pprint.pprint()
