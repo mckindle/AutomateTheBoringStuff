@@ -1,3 +1,7 @@
+###############
+## VERSION 1 ##
+###############
+
 inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 
 ## first I need to turn the dictionary into a list, using the value and key to create a new string entry in the list that matches the intended output.
@@ -16,6 +20,28 @@ def displayInventory(feedInventory):
     for k,v in feedInventory.items():
         inventoryTotal += v
     print('Total number of items: '+str(inventoryTotal))
+
+displayInventory(inventory)
+## In hindsight I didn't need to add the dictionary values to a list at all.
+## I was trying to sorten them in the order in the book but because they became strings it was not possible.
+
+
+        
+###############
+## VERSION 2 ##
+###############
+
+inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+
+def displayInventory(feedInventory):
+    print("Inventory:")
+
+    item_total = 0
+    for k,v in feedInventory.items():
+        item_total += v
+        print(str(v)+' '+str(k))
+
+    print('Total number of items: '+str(item_total))
 
 displayInventory(inventory)
         
