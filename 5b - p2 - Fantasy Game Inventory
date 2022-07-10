@@ -1,0 +1,21 @@
+inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+
+## first I need to turn the dictionary into a list, using the value and key to create a new string entry in the list that matches the intended output.
+def displayInventory(feedInventory):
+    inventoryString = []
+    for k,v in feedInventory.items():
+        inventoryString.append(str(v)+" "+str(k))
+        inventoryString.sort()
+
+## Then for every value in the list I need to print it.
+    for value in inventoryString:
+        print(value)
+
+## then I need to create a total value and add all of the values from the dictionary to it before printing the total as a new string using that total.
+    inventoryTotal = 0
+    for k,v in feedInventory.items():
+        inventoryTotal += v
+    print('Total number of items: '+str(inventoryTotal))
+
+displayInventory(inventory)
+        
