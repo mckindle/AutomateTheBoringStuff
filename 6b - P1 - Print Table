@@ -1,0 +1,30 @@
+
+tableData = [['apples', 'oranges', 'cherries', 'banana'],
+             ['Alice', 'Bob', 'Carol', 'David'],
+             ['dogs', 'cats', 'moose', 'goose']]
+
+def printTable(inputData):
+    columnWidth = [0]*len(inputData) ## I had to look up how to do this for each row, was oddly simple and I kicked myself)
+
+    print(columnWidth) # I wanted to check that it actually created a list of three 0 values.
+
+## [below] so for every row in the data I feed it it will look at each column (each item in that row), 
+## and if the length of the column is greater than the current 'columnWidth[row]' then that row will be updated with the length of the column (the item in the data row)
+## otherwise nothing happens as represented by not supplying it with anything to do if that's not the case.
+
+    for row in range(len(inputData)): 
+        for column in range(len(inputData[row])):
+            if len(inputData[row][column]) > columnWidth[row]:
+                columnWidth[row] = len(inputData[row][column])
+
+    print(columnWidth) ## I wanted to check that the column widths were actually updated.
+    
+## [below] now what happens is for every column, for every row, I am printing the column with rjust.
+## I am feeding the rjust the equivalent columnWidth[row] value so that the alignments for each item per row match the row below when printed.
+    
+    for column in range(len(inputData[0])):
+        for row in range (len(inputData)):
+            print(inputData[row][column].rjust(columnWidth[row]), end = ' ')
+        print()
+
+printTable(tableData)
