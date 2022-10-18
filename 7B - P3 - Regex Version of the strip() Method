@@ -1,0 +1,20 @@
+##Write a function that takes a string and does the same thing as the
+##strip() string method. If no other arguments are passed other than the
+##string to strip, then whitespace characters will be removed from the
+##beginning and end of the string. Otherwise, the characters specified in
+##the second argument to the function will be removed from the string.
+
+import re
+# not allowed to start with a space
+# characters after that are wildcard, so anything except a linebreak, including spaces.
+# not allowed to end with a space
+nospaceRegex = re.compile(r'[^\s].*[^\s$]')
+
+# I used the findall so that the regex would be added to a list
+# printing the list demonstrates that the strip worked
+# dropping a line and printing join just prints the string entry without the brackets and strign quotes.
+mo = nospaceRegex.findall('      this is a string     ')
+print(mo)
+print('\n'.join(mo))
+
+# don't overcomplicate it kids ;)
